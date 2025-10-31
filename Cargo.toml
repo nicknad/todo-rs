@@ -1,0 +1,16 @@
+[package]
+name = "todo-rs"
+version = "0.1.0"
+edition = "2024"
+authors = ["nicknad"]
+license = "MIT"
+
+[dependencies]
+anyhow = "1.0.100"
+clap = { version = "4.5.51", features = ["derive"] }
+
+[profile.release]
+strip = "debuginfo"
+lto = true
+opt-level = "z"
+panic = "abort"
